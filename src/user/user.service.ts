@@ -19,6 +19,10 @@ export class UserService {
     return this.userRepository.save(user);
   }
 
+  findByFullName(firstName: string, lastName: string) {
+    
+  }
+
   findAll(): Promise<User[]> {
     return this.userRepository.find();
   }
