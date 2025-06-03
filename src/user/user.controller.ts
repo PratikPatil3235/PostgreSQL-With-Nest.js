@@ -17,6 +17,12 @@ export class UserController {
     return this.userService.findAll();
   }
 
+  // @Get('/getFullName')
+  // findByFullName(@Body() firstName:string,lastName:string) {
+  //   return this.userService.findByFullName(firstName,lastName);
+  // }
+
+    
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.userService.findOne(+id);

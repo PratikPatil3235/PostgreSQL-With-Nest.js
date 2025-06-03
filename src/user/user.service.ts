@@ -4,6 +4,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { DeleteResult, Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
+import { UserRepository } from './repo/user.repository';
 
 @Injectable()
 export class UserService {
@@ -19,9 +20,9 @@ export class UserService {
     return this.userRepository.save(user);
   }
 
-  findByFullName(firstName: string, lastName: string) {
-    
-  }
+  // findByFullName(firstName: string, lastName: string) {
+  //   return this.userRepository.findByFullName(firstName, lastName);
+  // }
 
   findAll(): Promise<User[]> {
     return this.userRepository.find();
