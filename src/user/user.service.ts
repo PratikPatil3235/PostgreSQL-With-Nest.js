@@ -28,8 +28,8 @@ export class UserService {
     return this.userRepository.find();
   }
 
-  async findOne(id: number) :Promise<User|null>{
-    const user =await this.userRepository.findOne({ where: { id } });
+  async findOne(id: number): Promise<User | null> {
+    const user = await this.userRepository.findOne({ where: { id } });
     if (!user) {
       throw new NotFoundException(`User with ID ${id} not found`);
     }
@@ -47,7 +47,7 @@ export class UserService {
     return this.userRepository.save(user);
   }
 
-  async remove(id: number):Promise<DeleteResult> {
+  async remove(id: number): Promise<DeleteResult> {
     return await this.userRepository.delete(id);
   }
 }
